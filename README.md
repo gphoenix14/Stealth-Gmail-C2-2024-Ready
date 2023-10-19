@@ -1,4 +1,4 @@
-Sealth Gmail C2 2024 Ready
+# Sealth Gmail C2 2024 Ready
 
 ## Introduction
 The project consists of a completely stealthy C&C (Command and Control) solution with a Client/Server architecture. 
