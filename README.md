@@ -55,16 +55,7 @@ https://www.redhotcyber.com/post/come-realizzare-un-command-control-utilizzando-
   Copy the password app you created in the previous step and paste it in either the client or the server script.
 
 ## Usage
-options:
-  -h, --help            show this help message and exit
-  -c COMMAND, --command COMMAND
-                        Command (The command to execute or type "update" to get command output from hosts)
-  -o OS, --os OS        Operative System (linux/windows)
-  -t TYPE, --type TYPE  type of communication (unicast/multicast/broadcast)
-  -m MAC, --mac MAC     remote host mac address (Required only in case of Unicast)
-  -g GROUP, --group GROUP
-                        Group (Required only in case of Multicast)
-
+Server.Py:
 Command Example 1 -> Send "dir" command to all windows zombie
 python3 Server.py -c dir -o windows -t broadcast
 
@@ -79,5 +70,8 @@ python3 Server.py -c ifconfig -o linux -t unicast -m <mac_address>
 
 Commad Example 5 -> Get Responses from zombies
 python3 Server.py -c update
+
+Client.Py:
+No commands required, it is plug and play, just start it.
 
 
