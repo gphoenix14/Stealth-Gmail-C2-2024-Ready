@@ -56,22 +56,33 @@ https://www.redhotcyber.com/post/come-realizzare-un-command-control-utilizzando-
 
 ## Usage
 Server.Py:
+
 Command Example 1 -> Send "dir" command to all windows zombie
+
 python3 Server.py -c dir -o windows -t broadcast
 
+
 Commad Example 2 -> send "ifconfig" command to all linux zombie
+
 python3 Server.py -c ifconfig -o linux -t broadcast
 
+
 Commad Example 3 -> send "ifconfig" command to linux zombie into the phoenix group
+
 python3 Server.py -c ifconfig -o linux -t multicast -g phoenix_group
 
+
 Commad Example 4 -> send "ifconfig" command to a defined linux machine
+
 python3 Server.py -c ifconfig -o linux -t unicast -m <mac_address>
 
+
 Commad Example 5 -> Get Responses from zombies
+
 python3 Server.py -c update
 
 Client.Py:
+
 No commands required, it is plug and play, just start it.
 
 
